@@ -1,0 +1,3 @@
+# MusicLibrary
+
+Pure awesomeness.
