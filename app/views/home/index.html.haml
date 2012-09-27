@@ -1,3 +1,47 @@
-%h1 Home#index
+.row.banner
+  .span2.bubble
+    %h1 Music Library
+  .span4.bubble
+    %input(type="search" placeholder="Search")
+  .span2.bubble
+    %p Composers
+  .span2.bubble
+    %p Category
+  .span2.bubble
+    %p Setting
 
-%p Find me in app/views/home/index.html.erb
+.row
+  .span4.bubble
+    %p Bach
+  .span8.bubble
+    %img.img-polaroid(src="http://www.masonmusic.org/images20/mozartcolor.jpg")
+    %p Mozart
+
+.row
+  .span8
+    .row
+      .span2.bubble
+        %p String Quartets
+      .span4.bubble
+        %p Beethoven
+      .span2.bubble
+        %p Handel
+    .row.last-row
+      .span4.bubble
+        %p Chamber Music
+      .span4.bubble
+        %p Choir Music
+  .span4
+    .row.last-row
+      .span4.double-bubble
+        %p Symphony Orchestra
+
+.row
+  .span2.bubble
+    %p Vivaldi
+  .span2.bubble
+    %p Ravel
+  .span6.bubble
+    %p Haydn
+  .span2.bubble
+    %p ??

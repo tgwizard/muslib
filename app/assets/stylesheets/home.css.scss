@@ -1,3 +1,49 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bubble {
+  background-color: #a899b3;
+  height: 130px;
+  * {
+    margin: 15px;
+  }
+  img {
+    height: 100px - 10px;
+    float: right;
+  }
+}
+.bubble:hover {
+  background-color: #ffb8a9;
+  cursor: pointer;
+}
+
+.banner {
+  .bubble {
+    height: 75px;
+
+    h1 {
+      font-size: 1.3em;
+      margin-top: 20px;
+    }
+    input {
+      width: 326px;
+      height: 39px;
+      font-size: 21px;
+      padding: 4px 6px 0px 6px;
+      border-radius: 0;
+    }
+  }
+}
+
+.double-bubble {
+  @extend .bubble;
+  height: 280px;
+}
+
+.row {
+  margin-bottom: 20px;
+  .last-row {
+    margin-bottom: 0px;
+  }
+}

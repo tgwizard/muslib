@@ -41,13 +41,14 @@
     = favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon'
 
   %body
-    .container-fluid
-      .row-fluid
+    .container
+      .row
         .span12
           = bootstrap_flash
-      .row-fluid
+
+      = yield
 
       %footer
-        %p &copy; Company 2012
+        %p &copy; Adam 2012. Bah!
 
     = javascript_include_tag "application"
