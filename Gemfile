@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source :rubygems
 
 ruby '1.9.3'
 
@@ -9,6 +9,9 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 gem 'haml'
+
+gem 'therubyracer'
+gem 'less-rails'
 gem "twitter-bootstrap-rails"
 
 
