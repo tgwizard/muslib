@@ -1,7 +1,28 @@
-%h1= @composer.name
+.row-fluid
+  .span2
+    %ul.nav.nav-tabs.nav-stacked
+      %li= link_to "General info", "#"
+      %li= link_to "Music", "#music"
+  .span10
+    %h1= @composer.full_name
 
-%p= @composer.text
+    %p
+      = link_to 'Edit', edit_composer_path(@composer)
+      = link_to 'Back', composers_path
 
-%p
-  = link_to 'Edit', edit_composer_path(@composer)
-  = link_to 'Back', composers_path
+    %p= @composer.description
+
+    %dl
+      %dt Full name
+      %dd= @composer.full_name
+      %dt Canonical name
+      %dd= @composer.canonical_name
+      %dt Native name
+      %dd= @composer.native_name
+      %dt Born on
+      %dd= @composer.date_born
+      %dt Died on
+      %dd= @composer.date_died
+
+    %h2 Music
+    %a{:name => "music"}

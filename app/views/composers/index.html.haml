@@ -16,7 +16,6 @@
         - @composers.each do |composer|
           %tr
             %td
-              = composer.name
+              = link_to composer.full_name, composer
             %td
-              = link_to 'View', composer
               = link_to 'Edit', edit_composer_path(composer)

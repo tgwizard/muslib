@@ -9,7 +9,7 @@ class ComposersController < ApplicationController
   end
 
   def show
-    @composer = Composer.find(params[:id])
+    @composer = Composer.find_by(slug: params[:id])
 
     respond_to do |format|
       format.html
@@ -29,11 +29,12 @@ class ComposersController < ApplicationController
 
   def create
     @composer = Composer.new(params[:composer])
+    @composer.generate_slug
 
     respond_to do |format|
       if @composer.save
         format.html { redirect_to(@composer,
-                                  :notice => 'composer was successfully created.') }
+                                  :notice => 'Composer was successfully created.') }
         format.json { render :json => @composer,
                       :status => :created, :location => @composer }
       else
@@ -45,16 +46,16 @@ class ComposersController < ApplicationController
   end
 
   def edit
-    @composer = Composer.find(params[:id])
+    @composer = Composer.find_by(slug: params[:id])
   end
 
   def update
-    @composer = Composer.find(params[:id])
+    @composer = Composer.find_by(slug: params[:id])
 
     respond_to do |format|
       if @composer.update_attributes(params[:composer])
         format.html  { redirect_to(@composer,
-                                   :notice => 'composer was successfully updated.') }
+                                   :notice => 'Composer was successfully updated.') }
         format.json  { head :no_content }
       else
         format.html  { render :action => "edit" }

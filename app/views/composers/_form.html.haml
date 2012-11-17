@@ -1,18 +1,31 @@
 = form_for(@composer) do |f|
   - if @composer.errors.any?
-    #errorExplanation
-      %h2
-        pluralize(@post.errors.count, "error")
+    .alert.alert-block.alert-error
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      %h4
+        = pluralize(@composer.errors.count, "error")
         prohibited this post from being saved:
       %ul
         - @composer.errors.full_messages.each do |msg|
           %li= msg
 
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.label :full_name
+    = f.text_field :full_name
   .field
-    = f.label :text
-    = f.text_area :text
+    = f.label :canonical_name
+    = f.text_field :canonical_name
+  .field
+    = f.label :native_name
+    = f.text_field :native_name
+  .field
+    = f.label :description
+    = f.text_area :description, :size => "60x12"
+  .field
+    = f.label :date_born
+    = f.text_field :date_born
+  .field
+    = f.label :date_died
+    = f.text_field :date_died
   .actions
     = f.submit

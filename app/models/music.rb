@@ -1,4 +1,4 @@
-class Composer
+class Music
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia
@@ -9,11 +9,11 @@ class Composer
   field :native_name, type: String # TODO: find a better term
 
   field :description, type: String
-  field :date_born, type: Date
-  field :date_died, type: Date
+  field :date_written_start, type: Date
+  field :date_written_end, type: Date
 
   attr_accessible :canonical_name, :full_name, :native_name, :description,
-    :date_born, :date_died
+    :date_written_start, :date_written_end
 
   def to_param
     slug

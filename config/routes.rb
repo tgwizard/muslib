@@ -1,5 +1,6 @@
 MusicLibrary::Application.routes.draw do
-  match 'gui-prototype' => 'home#index'
+  root :to => 'home#index'
+  match 'gui-prototype' => 'home#gui_prototype'
 
   resources :composers
 

@@ -24,9 +24,19 @@ instructions](http://www.mongodb.org/display/DOCS/Quickstart).
 Done! Start the server by running `rails s`.
 
 
+## Helpful Commands
+
+You can reset the development database by connecting to it and dropping it:
+
+~~~
+mongo music_library_development
+db.dropDatabase();
+~~~
+
+
 ## Contribute
 
-Fork. Code. Tests. Feature branch. Pull request.
+Fork. Code. Tests. Feature branches are good. Pull request.
 
 
 ## License
