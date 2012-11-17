@@ -1,0 +1,22 @@
+.row-fluid
+  .span2
+    This is the left span
+  .span10
+    %h1 All composers
+
+    %p
+      = link_to 'Add a composer', new_composer_path
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Actions
+      %tbody
+        - @composers.each do |composer|
+          %tr
+            %td
+              = composer.name
+            %td
+              = link_to 'View', composer
+              = link_to 'Edit', edit_composer_path(composer)

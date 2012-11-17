@@ -1,0 +1,9 @@
+%h1
+  Editing
+  = @composer.name
+
+= render 'form'
+
+%p
+  = link_to 'Show', @composer
+  = link_to 'Back', composers_path

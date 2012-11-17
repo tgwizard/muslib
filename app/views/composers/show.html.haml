@@ -1,0 +1,7 @@
+%h1= @composer.name
+
+%p= @composer.text
+
+%p
+  = link_to 'Edit', edit_composer_path(@composer)
+  = link_to 'Back', composers_path

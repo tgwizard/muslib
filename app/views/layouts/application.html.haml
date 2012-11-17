@@ -41,12 +41,23 @@
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
 
   %body
-    .container
-      .row
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container-fluid
+          %a.brand{:href => '/'} Music Library
+          .nav-collapse.collapse
+            %ul.nav
+              %li
+                = link_to 'Composers', composers_path
+
+    .container-fluid
+      .row-fluid
         .span12
           = bootstrap_flash
 
       = yield
+
+      %hr
 
       %footer
         %p &copy; Adam 2012. Bah!

@@ -1,5 +1,7 @@
 MusicLibrary::Application.routes.draw do
-  root :to => 'home#index'
+  match 'gui-prototype' => 'home#index'
+
+  resources :composers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
