@@ -14,6 +14,10 @@ gem 'therubyracer'
 gem 'less-rails'
 gem "twitter-bootstrap-rails"
 
+gem 'bson_ext'
+gem 'mongo'
+gem 'mongoid'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
