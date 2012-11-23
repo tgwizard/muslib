@@ -1,4 +1,4 @@
-MusicLibrary::Application.routes.draw do
+MusLib::Application.routes.draw do
   root :to => 'home#index'
   match 'gui-prototype' => 'home#gui_prototype'
 

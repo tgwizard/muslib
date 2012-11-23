@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-MusicLibrary::Application.load_tasks
+MusLib::Application.load_tasks

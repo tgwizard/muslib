@@ -1,4 +1,4 @@
-# MusicLibrary
+# muslib.org
 
 This site is built in Ruby, on Rails, using MongoDB via Mongoid, presented with
 Bootstrap, authenticated via Mozilla Persona.
@@ -6,7 +6,7 @@ Bootstrap, authenticated via Mozilla Persona.
 
 ## Development installation
 
-Clone the repository: `git clone git@github.com:tgwizard/musiclibrary.git`. cd
+Clone the repository: `git clone git@github.com:tgwizard/muslib.git`. cd
 into the directory.
 
 Install Ruby, at least v1.9.3. It is recommended to use rbenv or rvm to do
