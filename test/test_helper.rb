@@ -10,4 +10,14 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  # fixes to drop all data in mongodb after each test
+  def teardown
+    Mongoid.default_session.collections.select {|c| c.name !~ /system/ }.each(&:drop)
+  end
+  def inherited(base)
+    base.define_method teardown do
+      super
+    end
+  end
 end
