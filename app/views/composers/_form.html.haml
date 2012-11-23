@@ -10,14 +10,14 @@
           %li= msg
 
   .field
+    = f.label :english_name
+    = f.text_field :english_name
+  .field
     = f.label :full_name
     = f.text_field :full_name
   .field
-    = f.label :canonical_name
-    = f.text_field :canonical_name
-  .field
-    = f.label :native_name
-    = f.text_field :native_name
+    = f.label :short_name
+    = f.text_field :short_name
   .field
     = f.label :description
     = f.text_area :description, :size => "60x12"

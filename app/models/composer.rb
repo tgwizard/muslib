@@ -4,15 +4,15 @@ class Composer
   include Mongoid::Paranoia
 
   field :slug, type: String
-  field :canonical_name, type: String
+  field :short_name, type: String
+  field :english_name, type: String
   field :full_name, type: String
-  field :native_name, type: String # TODO: find a better term
 
   field :description, type: String
   field :date_born, type: Date
   field :date_died, type: Date
 
-  attr_accessible :canonical_name, :full_name, :native_name, :description,
+  attr_accessible :short_name, :english_name, :full_name, :description,
     :date_born, :date_died
 
   def to_param
@@ -20,13 +20,13 @@ class Composer
   end
 
   def generate_slug
-    self.slug = canonical_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    source = short_name || english_name
+    self.slug = source.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
 
   validates :slug, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :canonical_name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :full_name, presence: true
+  validates :full_name, presence: true, length: { minimum: 3, maximum: 50 }
 
   validates_uniqueness_of :slug
-  validates_uniqueness_of :canonical_name
+  validates_uniqueness_of :full_name
 end
