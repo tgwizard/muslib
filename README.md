@@ -1,5 +1,7 @@
 # muslib.org
 
+This is very much a work in progress, to a large extent just for the fun of it.
+
 This site is built in Ruby, on Rails, using MongoDB via Mongoid, presented with
 Bootstrap, authenticated via Mozilla Persona.
 
