@@ -3,7 +3,7 @@
 This site is built in Ruby, on Rails, using MongoDB via Mongoid, presented with
 Bootstrap, authenticated via Mozilla Persona.
 
-[![Build Status](https://travis-ci.org/[tgwizard]/[muslib].png)](https://travis-ci.org/[tgwizard]/[muslib])
+[![Build Status](https://travis-ci.org/tgwizard/muslib.png)](https://travis-ci.org/tgwizard/muslib)
 
 
 ## Development installation
