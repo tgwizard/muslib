@@ -28,7 +28,7 @@ Install all gems: `bundle install`.
 Install and configure MongoDB. See [installation
 instructions](http://www.mongodb.org/display/DOCS/Quickstart).
 
-Run all unit tests: `rake test:units`.
+Run all tests: `rake test`.
 
 Done! Start the server by running `rails s`.
 
@@ -36,6 +36,15 @@ Done! Start the server by running `rails s`.
 ## Helpful Commands
 
 You can drop the development database by running `rake db:drop`.
+
+[Spork](https://github.com/sporkrb/spork) is available to speed up test
+running. Run `spork` in a terminal, and then use the test scripts to run your
+tests:
+
+~~~
+./tall.sh # runs all tests through spork
+./t.sh test/unit/composer.rb # runs just the specified test
+~~~
 
 
 ## Contribute
