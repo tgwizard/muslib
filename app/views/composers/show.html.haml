@@ -4,7 +4,7 @@
       %li= link_to "General info", "#"
       %li= link_to "Music", "#music"
   .span10
-    %h1= @composer.full_name
+    %h1= @composer.english_name
 
     %p
       = link_to 'Edit', edit_composer_path(@composer)

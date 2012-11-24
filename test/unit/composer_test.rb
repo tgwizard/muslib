@@ -33,7 +33,7 @@ class ComposerTest < ActiveSupport::TestCase
     end
     c.slug = nil
 
-    # english name
+    # slug
     c.english_name = "asdasdf"
     assert_raise Mongoid::Errors::Validations do
       c.save!

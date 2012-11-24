@@ -23,7 +23,7 @@ class Composer
 
   def update_slug
     source = short_name || english_name
-    self.slug = HelperLibrary.generate_slug source
+    self.slug = HelperLibrary.generate_slug source unless source.nil?
   end
 
   validates :slug, presence: true, length: { minimum: 3, maximum: 50 }
