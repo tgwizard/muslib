@@ -1,3 +1,5 @@
+require 'helper_library'
+
 class Composer
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -19,14 +21,16 @@ class Composer
     slug
   end
 
-  def generate_slug
+  def update_slug
     source = short_name || english_name
-    self.slug = source.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    self.slug = HelperLibrary.generate_slug source
   end
 
   validates :slug, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :full_name, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :english_name, presence: true, length: { minimum: 3, maximum: 50 }
 
-  validates_uniqueness_of :slug
-  validates_uniqueness_of :full_name
+  validates_uniqueness_of :slug, :case_sensitive => false
+  validates_uniqueness_of :short_name, :allow_nil => true, :case_sensitive => false
+  validates_uniqueness_of :english_name, :case_sensitive => false
+  validates_uniqueness_of :full_name, :allow_nil => true, :case_sensitive => false
 end

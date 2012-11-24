@@ -29,7 +29,7 @@ class ComposersController < ApplicationController
 
   def create
     @composer = Composer.new(params[:composer])
-    @composer.generate_slug
+    @composer.update_slug
 
     respond_to do |format|
       if @composer.save

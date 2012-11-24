@@ -21,6 +21,8 @@ Install all gems: `bundle install`.
 Install and configure MongoDB. See [installation
 instructions](http://www.mongodb.org/display/DOCS/Quickstart).
 
+Run all unit tests: `rake test:units`.
+
 Done! Start the server by running `rails s`.
 
 
