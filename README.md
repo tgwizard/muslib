@@ -28,12 +28,7 @@ Done! Start the server by running `rails s`.
 
 ## Helpful Commands
 
-You can reset the development database by connecting to it and dropping it:
-
-~~~
-mongo music_library_development
-db.dropDatabase();
-~~~
+You can drop the development database by running `rake db:drop`.
 
 
 ## Contribute
