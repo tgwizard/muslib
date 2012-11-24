@@ -2,8 +2,11 @@
 
 This is very much a work in progress, to a large extent just for the fun of it.
 
-This site is built in Ruby, on Rails, using MongoDB via Mongoid, presented with
-Bootstrap, authenticated via Mozilla Persona.
+This site is built in [Ruby](http://www.ruby-lang.org), on
+[Rails](http://rubyonrails.org/), using [MongoDB](http://www.mongodb.org/) via
+[Mongoid](http://mongoid.org), presented with
+[Bootstrap](http://twitter.github.com/bootstrap/), authenticated via [Mozilla
+Persona](https://login.persona.org/).
 
 [![Build Status](https://travis-ci.org/tgwizard/muslib.png)](https://travis-ci.org/tgwizard/muslib)
 
