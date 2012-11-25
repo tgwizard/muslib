@@ -3,8 +3,8 @@
     %ul.nav.nav-tabs.nav-stacked
       %li= link_to "General info", "#"
       %li= link_to "Music", "#music"
-  .span10
-    %h1= @composer.english_name
+  .span6
+    %h1= @composer.full_name
 
     %p
       = link_to 'Edit', edit_composer_path(@composer)
@@ -13,16 +13,16 @@
     %p= @composer.description
 
     %dl
-      %dt Full name
-      %dd= @composer.full_name
-      %dt English name
-      %dd= @composer.english_name
-      %dt Short name
-      %dd= @composer.short_name
+      - unless @composer.english_name.nil?
+        %dt English name
+        %dd= @composer.english_name
+      - unless @composer.short_name.nil?
+        %dt Short name
+        %dd= @composer.short_name
       %dt Born on
-      %dd= @composer.date_born
+      %dd= @composer.date_born || 'Unknown'
       %dt Died on
-      %dd= @composer.date_died
+      %dd= @composer.date_died || 'Unknown'
 
     %h2 Music
     %a{:name => "music"}

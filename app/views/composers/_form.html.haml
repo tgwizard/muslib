@@ -10,22 +10,35 @@
           %li= msg
 
   .field
-    = f.label :english_name
-    = f.text_field :english_name
-  .field
     = f.label :full_name
     = f.text_field :full_name
+
+  .field
+    = f.label :english_name
+    = f.text_field :english_name
+    %span.help-block
+      If different from the full name, e.g. George Frideric Handel for Georg
+      Friedrich Händel.
+
   .field
     = f.label :short_name
     = f.text_field :short_name
+    %span.help-block
+      A short moniker for this composer, the name this composer is usually
+      called. Mozart for Wolfgang Amadeus Mozart, Bach for Johann Sebastian
+      Bach.
+
   .field
     = f.label :description
-    = f.text_area :description, :size => "60x12"
+    = f.text_area :description, :size => "120x12"
+
   .field
     = f.label :date_born
     = f.text_field :date_born
+
   .field
     = f.label :date_died
     = f.text_field :date_died
+
   .actions
-    = f.submit
+    = f.submit :class => 'btn'

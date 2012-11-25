@@ -34,7 +34,7 @@ class ComposersController < ApplicationController
     respond_to do |format|
       if @composer.save
         format.html { redirect_to(@composer,
-                                  :notice => "Composer #{@composer.english_name} was successfully created.") }
+                                  :notice => "Composer #{@composer.full_name} was successfully created.") }
         format.json { render :json => @composer,
                       :status => :created, :location => @composer }
       else

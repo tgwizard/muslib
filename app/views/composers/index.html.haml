@@ -11,11 +11,8 @@
       %thead
         %tr
           %th Name
-          %th Actions
       %tbody
         - @composers.each do |composer|
           %tr
             %td
               = link_to composer.full_name, composer
-            %td
-              = link_to 'Edit', edit_composer_path(composer)

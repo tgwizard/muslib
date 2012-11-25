@@ -9,14 +9,14 @@ class ComposersControllerTest < ActionController::TestCase
 
   test "should create composer" do
     assert_difference 'Composer.count' do
-      post :create, :composer => { :english_name => 'Mozart' }
+      post :create, :composer => { :full_name => 'Mozart' }
     end
     assert_redirected_to composer_path(assigns(:composer))
     assert_equal 'Composer Mozart was successfully created.', flash[:notice]
   end
 
   test "should show composer" do
-    c = Composer.new(:english_name => 'Mozart')
+    c = Composer.new(:full_name => 'Mozart')
     c.update_slug
     c.save!
 

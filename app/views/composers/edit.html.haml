@@ -1,9 +1,11 @@
-%h1
-  Editing
-  = @composer.full_name
+.row-fluid
+  .span6.offset2
+    %h1
+      Editing
+      = @composer.full_name
 
-= render 'form'
+    = render 'form'
 
-%p
-  = link_to 'Show', @composer
-  = link_to 'Back', composers_path
+    %p
+      = link_to 'Show', @composer
+      = link_to 'Back', composers_path
