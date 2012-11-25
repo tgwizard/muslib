@@ -24,6 +24,18 @@ class ComposersControllerTest < ActionController::TestCase
     assert_select 'h1', 'Mozart'
   end
 
+  test "should update composer" do
+    c = Composer.new(:full_name => 'Mozart')
+    c.update_slug
+    c.save!
+
+    put :update, :id => 'mozart', :composer => { :full_name => 'Mozart', :description => 'Truman' }
+    assert_redirected_to composer_path(assigns(:composer))
+    c = Composer.find_by(:slug => 'mozart')
+    assert_equal c.full_name, 'Mozart'
+    assert_equal c.description, 'Truman'
+  end
+
   test "routes" do
     assert_routing '/composers', { :controller => "composers", :action => "index" }
     assert_routing '/composers/new', { :controller => "composers", :action => "new" }

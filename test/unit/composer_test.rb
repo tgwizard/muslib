@@ -8,6 +8,29 @@ class ComposerTest < ActiveSupport::TestCase
     Composer.find_by(slug: c.slug)
   end
 
+  test "can save and fetch composer with all attributes" do
+    c = Composer.new :full_name => 'Mozart', :english_name => 'English Mozart',
+      :short_name => 'Moz', :description => "D", :date_born => '2012-01-01',
+      :date_died => '2012-01-02'
+    c.update_slug
+    c.save!
+    d = Composer.find_by(slug: c.slug)
+    assert_equal 'Mozart', d.full_name
+    assert_equal 'moz', d.slug
+    assert_equal 'English Mozart', d.english_name
+    assert_equal 'Moz', d.short_name
+    assert_equal 'D', d.description
+    assert_equal Date.new(2012,01,01), d.date_born
+    assert_equal Date.new(2012,01,02), d.date_died
+  end
+
+  test "cannot update protected composer attributes" do
+    c = Composer.new
+    c.slug = 'qwerty'
+    c.update_attributes(:slug => 'asdf')
+    assert_equal 'qwerty', c.slug
+  end
+
   test "slug generation uses the correct source" do
     c = Composer.new :full_name => 'a full name'
     c.update_slug
