@@ -35,7 +35,8 @@ Done! Start the server by running `rails s`.
 
 ## Helpful Commands
 
-You can drop the development database by running `rake db:drop`.
+You can drop the development database by running `rake db:drop`. You can seed
+it by running `rake db:seed`.
 
 [Spork](https://github.com/sporkrb/spork) is available to speed up test
 running. Run `spork` in a terminal, and then use the test scripts to run your
