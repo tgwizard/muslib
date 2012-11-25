@@ -23,4 +23,11 @@ class ComposersControllerTest < ActionController::TestCase
     get :show, :id => 'mozart'
     assert_select 'h1', 'Mozart'
   end
+
+  test "routes" do
+    assert_routing '/composers', { :controller => "composers", :action => "index" }
+    assert_routing '/composers/new', { :controller => "composers", :action => "new" }
+    assert_routing '/composers/mozart', { :controller => "composers", :action => "show", :id => "mozart" }
+    assert_routing '/composers/mozart/edit', { :controller => "composers", :action => "edit", :id => "mozart" }
+  end
 end
