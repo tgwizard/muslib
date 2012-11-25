@@ -63,5 +63,11 @@ module MusLib
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Rack::Rewrite stuff
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      # redirect all urls with a trailing slash to one without the slash
+      r301 %r{^/(.*)/$}, '/$1'
+    end
   end
 end
