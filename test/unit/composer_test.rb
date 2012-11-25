@@ -52,7 +52,7 @@ class ComposerTest < ActiveSupport::TestCase
   test "composer required fields" do
     c = Composer.new
 
-    # english name
+    # full name
     c.slug = "asdasdf"
     assert_raise Mongoid::Errors::Validations do
       c.save!
@@ -69,9 +69,9 @@ class ComposerTest < ActiveSupport::TestCase
   test "composer field minimum lengths" do
     c = Composer.new
 
-    # english name
+    # full name
     c.slug = "asdasdf"
-    c.english_name = 'as'
+    c.full_name = 'as'
     assert_raise Mongoid::Errors::Validations do
       c.save!
     end
@@ -79,10 +79,24 @@ class ComposerTest < ActiveSupport::TestCase
 
     # slug
     c.slug = "as"
-    c.english_name = "asdasdf"
+    c.full_name = "asdasdf"
     assert_raise Mongoid::Errors::Validations do
       c.save!
     end
+
+    # english name
+    c.slug = "asdfasdf"
+    c.full_name = "asdfasdf"
+    c.english_name = "as"
+    assert_raise Mongoid::Errors::Validations do
+      c.save!
+    end
+
+    # all with proper length
+    c.slug = "asdfasdf"
+    c.full_name = "asdfasdf"
+    c.english_name = "asdfasdf"
+    assert c.save
   end
 
   test "composer slug must be unique" do
@@ -164,5 +178,4 @@ class ComposerTest < ActiveSupport::TestCase
       d.save!
     end
   end
-
 end

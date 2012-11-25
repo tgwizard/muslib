@@ -3,6 +3,7 @@ MusLib::Application.routes.draw do
   match 'gui-prototype' => 'home#gui_prototype'
 
   resources :composers
+  resources :music
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

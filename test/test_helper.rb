@@ -63,6 +63,7 @@ class ActiveSupport::TestCase
   # fixes to drop all data in mongodb after each test
   def teardown
     Mongoid.default_session.collections.select {|c| c.name !~ /system/ }.each(&:drop)
+    Mongoid::IdentityMap.clear
   end
   def inherited(base)
     base.define_method teardown do

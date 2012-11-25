@@ -1,0 +1,11 @@
+.row-fluid
+  .span6.offset2
+    %h1
+      Editing
+      = @music.full_name
+
+    = render 'form'
+
+    %p
+      = link_to 'Show', @music
+      = link_to 'Back', music_index_path

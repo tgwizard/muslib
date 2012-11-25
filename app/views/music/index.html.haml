@@ -1,0 +1,18 @@
+.row-fluid
+  .span2
+    This is the left span
+  .span10
+    %h1 All music works
+
+    %p
+      = link_to 'Add a music work', new_music_path
+
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+      %tbody
+        - @music.each do |music|
+          %tr
+            %td
+              = link_to music.full_name, music

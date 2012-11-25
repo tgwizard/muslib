@@ -1,0 +1,39 @@
+= form_for(@music) do |f|
+  - if @music.errors.any?
+    .alert.alert-block.alert-error
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      %h4
+        = pluralize(@music.errors.count, "error")
+        prohibited this music work from being saved:
+      %ul
+        - @music.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :composer
+    = f.select(:composer, @composers.map {|c| [c.full_name, c.slug]})
+
+  .field
+    = f.label :full_name
+    = f.text_field :full_name
+
+  .field
+    = f.label :english_name
+    = f.text_field :english_name
+    %span.help-block
+      If different from the full name, e.g. The Magic Flute for Mozart's Die
+      Zauberflöte
+
+  .field
+    = f.label :description
+    = f.text_area :description, :size => "120x12"
+
+  .field
+    = f.label :date_written_start
+    = f.text_field :date_written_start
+
+  .field
+    = f.label :date_written_end
+    = f.text_field :date_written_end
+
+  .actions
+    = f.submit :class => 'btn'

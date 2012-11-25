@@ -19,7 +19,6 @@ class ComposersController < ApplicationController
 
   def new
     @composer = Composer.new
-    puts @composer
 
     respond_to do |format|
       format.html

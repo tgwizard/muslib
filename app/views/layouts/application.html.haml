@@ -47,8 +47,8 @@
           %a.brand{:href => '/'} muslib.org
           .nav-collapse.collapse
             %ul.nav
-              %li
-                = link_to 'Composers', composers_path
+              %li= link_to 'Composers', composers_path
+              %li= link_to 'Music Works', music_index_path
 
     .container-fluid
       - if !flash.empty?

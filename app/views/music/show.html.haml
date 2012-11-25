@@ -1,0 +1,23 @@
+.row-fluid
+  .span2
+    %ul.nav.nav-tabs.nav-stacked
+      %li= link_to "General info", "#"
+      %li= link_to "Music", "#music"
+  .span6
+    %h1= "#{@music.full_name} by #{@music.composer.full_name}"
+
+    %p
+      = link_to 'Edit', edit_music_path(@music)
+      = link_to 'Back', music_index_path
+
+    %p= @music.description
+
+    %dl
+      - unless @music.english_name.nil?
+        %dt English name
+        %dd= @music.english_name
+      %dt Written
+      %dd
+        = @music.date_written_start || 'Unknown'
+        to
+        = @music.date_written_end || 'Unknown'

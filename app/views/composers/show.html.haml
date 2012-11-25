@@ -13,10 +13,10 @@
     %p= @composer.description
 
     %dl
-      - unless @composer.english_name.nil?
+      - unless @composer.english_name.blank?
         %dt English name
         %dd= @composer.english_name
-      - unless @composer.short_name.nil?
+      - unless @composer.short_name.blank?
         %dt Short name
         %dd= @composer.short_name
       %dt Born on
